@@ -1,24 +1,24 @@
-# 🛡️ CSRF Vulnerability Report in Online Movie Ticket Booking System in Python 
+#  CSRF Vulnerability Report in Online Movie Ticket Booking System in Python 
 
-## 🧾 Summary
+##  Summary
 
 A **Cross-Site Request Forgery (CSRF)** vulnerability was identified in the `Login Page` of the Movie Booking system. This flaw allows an attacker to force an authenticated user to submit crafted POST data, resulting in unauthorized actions such as searching records without their knowledge.
 
 ---
 
-## 📍 Affected Endpoint
+##  Affected Endpoint
 
 - **URL:** `[https://localhost:5000/]`
 - **HTTP Method:** `POST`
 - **Vulnerable Parameters:**
   - `pn`
   - `search`
-- **Authentication Required:** ✅ Yes
-- **CSRF Protection:** ❌ None observed
+- **Authentication Required:**  Yes
+- **CSRF Protection:**  None observed
 
 ---
 
-## 🔁 Steps to Reproduce
+##  Steps to Reproduce
 
 ### 1. Login as an Authenticated User
 
@@ -65,7 +65,7 @@ Save the following HTML as `csrf_poc.html`:
 ![image](https://github.com/user-attachments/assets/8973199b-3b4d-49cb-abda-3f61175d9666)
 
 
-### 3. 🚨 Trigger the CSRF Attack
+### 3.  Trigger the CSRF Attack
 
 - Open the file `csrf_poc.html` in a browser where the victim is already logged in.
 - The form auto-submits and sends the forged request.
@@ -73,18 +73,18 @@ Save the following HTML as `csrf_poc.html`:
 
 ---
 
-## 🧪 Technical Evidence
+##  Technical Evidence
 
-### 🔍 HTTP Request Sent by PoC
+###  HTTP Request Sent by PoC
 
 ![image](https://github.com/user-attachments/assets/aa2a84d4-4904-4033-bbe1-8832f7e3a28c)
 
-### 🔙 Response
+###  Response
 ![image](https://github.com/user-attachments/assets/43106c0d-53ac-4746-b43d-7f7ef4938b5b)
 
-✅ This confirms that the request was accepted and executed successfully without any CSRF protection or user interaction.
+ This confirms that the request was accepted and executed successfully without any CSRF protection or user interaction.
 
-## 💥 Impact
+##  Impact
 
 Attackers can craft a malicious web page that performs actions on behalf of logged-in users.
 
@@ -98,7 +98,7 @@ This poses a risk to the **confidentiality** and **integrity** of the system.
 
 ---
 
-## 🔧 Recommended Fixes
+##  Recommended Fixes
 
 1. **Implement CSRF Tokens**  
    Use secure, random CSRF tokens for every authenticated form and validate them server-side.
@@ -114,7 +114,7 @@ This poses a risk to the **confidentiality** and **integrity** of the system.
 
 ---
 
-## 🧑‍💻 Author
+## Author
 
 - **Name:** VANSH Dhawan And Subhash Paudel  
 - **Date of Discovery:** 28 June 2025  
